@@ -1,0 +1,511 @@
+body{
+    font-family: 'Open Sans';
+}
+
+
+
+
+.testimonial:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.testimonial{
+    background: #fff;
+    text-align: center;
+    padding: 30px 30px 50px;
+    margin: 0 15px 100px;
+    position: relative;
+    margin-top: 100px;
+}
+.testimonial:before,
+.testimonial:after{
+
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+}
+
+.testimonial>.testimonial-title{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.testimonial:after{
+    border-right: none;
+    border-left: 125px solid transparent;
+    left: auto;
+    right: 0;
+}
+.testimonial .description{
+    font-size: 16px;
+    color: #777;
+    text-align: justify;
+    opacity: 0.9;
+    letter-spacing: -1px;
+}
+
+.description-date{
+    font-size: 25px;
+    color:red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.description-location{
+    float: left;
+}
+.description-bandname{
+    float: left;
+}
+
+.description-ora-inizio{
+    float:right;
+}
+.description-ora-fine{
+    float:right;
+}
+
+.testimonial .testimonial-content{
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+.testimonial .pic{
+    display: inline-block;
+    border: 6px solid white;
+
+    box-shadow: 0 0 2px 2px #daad86;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+
+
+    overflow: hidden;
+    width: 150px;
+    height: 100px;
+}
+.testimonial .pic img{
+    width: 100%;
+    height: auto;
+
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+}
+.testimonial .title{
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 0 0 5px 0;
+}
+.testimonial .post{
+    display: block;
+    font-size: 14px;
+}
+.owl-theme .owl-controls{
+    margin-top: 60px;
+}
+.owl-theme .owl-controls .owl-page span{
+    width: 32px;
+    height: 10px;
+    background: #fff;
+    border: 2px solid #bd986b;
+    margin: 5px;
+    opacity: 1;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+    background: #ffd9b8;
+    border-color: #fff;
+}
+.pic img{
+    width: 100px !important;
+    height: 50px;
+}
+
+
+/*******************************FINE STYLE OWL CAROUSEL */
+
+body {
+    font-family: 'Open Sans';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Catamaran';
+    font-weight: 800 !important;
+}
+
+.btn-xl {
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.bg-black {
+    background-color: #000 !important;
+}
+
+.rounded-pill {
+    border-radius: 5rem;
+}
+
+.navbar-custom {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: black;
+    /*background-color: rgba(0, 0, 0, 0.7);*/
+}
+
+.navbar-custom .navbar-brand {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.1rem;
+}
+
+/*header.masthead {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(7rem + 72px);
+  padding-bottom: 7rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(#ff6a00), to(#ee0979));
+  background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+
+  background-image: url("./foto/backgorund.jpg");
+}
+
+header.masthead .masthead-content {
+  z-index: 1;
+  position: relative;
+}
+
+header.masthead .masthead-content .masthead-heading {
+  font-size: 4rem;
+}
+
+header.masthead .masthead-content .masthead-subheading {
+  font-size: 2rem;
+}
+
+header.masthead .bg-circle {
+  z-index: 0;
+  position: absolute;
+  border-radius: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#ee0979), to(#ff6a00));
+  background: linear-gradient(0deg, #ee0979 0%, #ff6a00 100%);
+}
+
+header.masthead .bg-circle-1 {
+  height: 90rem;
+  width: 90rem;
+  bottom: -55rem;
+  left: -55rem;
+}
+
+header.masthead .bg-circle-2 {
+  height: 50rem;
+  width: 50rem;
+  top: -25rem;
+  right: -25rem;
+}
+
+header.masthead .bg-circle-3 {
+  height: 20rem;
+  width: 20rem;
+  bottom: -10rem;
+  right: 5%;
+}
+
+header.masthead .bg-circle-4 {
+  height: 30rem;
+  width: 30rem;
+  top: -5rem;
+  right: 35%;
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    padding-top: calc(10rem + 55px);
+    padding-bottom: 10rem;
+  }
+  header.masthead .masthead-content .masthead-heading {
+    font-size: 6rem;
+  }
+  header.masthead .masthead-content .masthead-subheading {
+    font-size: 4rem;
+  }
+}*/
+
+header.masthead {
+    text-align: center;
+    color: white;
+
+
+    background-color: #212529;
+
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+header.masthead> img{
+    max-width: 100%;
+    height: auto;
+}
+
+header.masthead .intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+
+header.masthead .intro-text .intro-lead-in {
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+    margin-bottom: 25px;
+    font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+header.masthead .intro-text .intro-heading {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 25px;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@media (min-width: 768px) {
+    header.masthead .intro-text {
+        padding-top: 300px;
+        padding-bottom: 200px;
+    }
+    header.masthead .intro-text .intro-lead-in {
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+        margin-bottom: 25px;
+        font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    }
+    header.masthead .intro-text .intro-heading {
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+        margin-bottom: 50px;
+        font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    }
+
+
+
+}
+@media only screen and (max-device-width: 768px) {
+    header.masthead {
+        background-size: 768px 100%;
+        background-position: left;
+    }
+}
+
+
+.bg-primary {
+    background-color: #ee0979 !important;
+}
+
+.btn-primo {
+    background-color: #f05f40;
+    color: white;
+
+}
+
+.btn-primo:active, .btn-primo:focus, .btn-primo:hover {
+    background-color: #ed4321 !important;
+    color: white;
+}
+
+.btn-primo:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(238, 9, 121, 0.5);
+}
+
+
+.btn-secondary:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
+}
+
+
+
+/**********************QUESTO é TUTTO MIO CODICE */
+
+.eventi{
+    background-color:#f7f7f7;
+}
+
+#eventi-header{
+    padding-top:40px;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#eventi-header > hr{
+    height:5px;
+    border:none;
+    width: 150px;
+    background-color:#F05F40;
+}
+
+
+.bg-primary {
+    background-color: #f05f40!important;
+}
+#info{
+    padding: 8rem 0;
+}
+.text-faded {
+    color: rgba(255,255,255,.7);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+#btn-cerca-eventi{
+    margin-top: 20px;
+}
+#btn-cerca-gruppi{
+    margin-top: 20px;
+}
+#btn-cerca-gruppi:hover{
+    background-color:#009afe;
+    border-color:#009afe;
+    color: white;
+}
+
+
+/* animazione bounce */
+.bounce{
+
+    margin-left: -30px;
+    margin-top: -80px;
+    font-size: 80px;
+    color: white;
+    position: absolute;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+
+
+/* BOTTONI NELLA MAPPA  */
+
+#button_eventi{
+    padding-top: 50px;
+    padding-left: 10px;
+
+}
+.custom-gmaps-red{
+    background-color:#f9f9f9;
+    border-color: #f9f9f9;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35% 100%;
+    width: 70px;
+}
+
+.custom-gmaps-red:hover{
+    background-color:#E2E6EA;
+    border-color: #E2E6EA;
+}
+.custom-gmaps-red:active{
+    background-color:#E2E6EA;
+    border-color: #E2E6EA;
+}
+
+#button_gruppi{
+    padding-left: 10px;
+    padding-top: 20px;
+}
+.custom-gmaps-blue{
+    background-color:#f9f9f9;
+    border-color: #f9f9f9;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+}
+.custom-gmaps-blue:hover{
+    background-color:#E2E6EA;
+    border-color: #E2E6EA;
+}
+
+
+/*STYLING INFOWINDOW*/
+.infow-evnts-date{
+    color:red;
+    font-size: 20px;
+}
+.infow-evnts-title{
+    padding-top: 5px;
+    font-weight: bold;
+    color: black;
+    font-size: 15px;
+}
+.infow-evnts{
+    text-align: center;
+
+}
+.infow-events-ora-inizio{
+    float: left;
+}
+.infow-events-ora-fine{
+    float: right;
+}
+
+#map{
+    height: 600px;
+}
+
+.infow-groups-desc img{
+    float: none;
+  margin: 0 auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.infow-groups-title{
+    padding-top: 5px;
+    font-weight: bold;
+    color: black;
+    font-size: 15px;
+}
+.infow-groups{
+    text-align: center;
+    
+}

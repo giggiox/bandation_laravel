@@ -1,0 +1,196 @@
+.carousel-item{
+	min-height: 600px;
+	background-size: cover;
+	background-position: center center;
+
+}
+
+
+.group-name{
+	text-align: center;
+	font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.group-badges li{
+	float: right;
+	padding: 10px;
+	display: inline-block;
+	font-size: 20px;
+}
+.testimonial-gruppo{
+	margin-top: 0px;;
+}
+
+.group-info{
+	background-color: #ffff;
+	padding-top: 100px;
+}
+.tab-content{
+	background-color:#F8F9FA;
+}
+
+
+.group-next-event-text{
+		color: #111;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 50px;
+		font-weight: 700;
+		line-height: 64px;
+		margin: 0 0 0;
+		padding: 20px 30px;
+		text-align: center;
+		text-transform: uppercase;
+}
+.flipdown{
+	float: none; margin: 0 auto;
+	margin-top: 150px;
+}
+.evento-prox{
+	margin-top: 50px;
+}
+.groups-events-header{
+	color: #111;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 64px;
+	margin: 0 0 0;
+	padding: 20px 30px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+.group-member{
+	margin-top: 20px;
+	background-color: #ffff;
+	height: 200px;
+	transition: box-shadow .3s;
+}
+.group-member:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+
+.group-member-profile{
+	padding-top: 20px;
+}
+.group-member-profile img{
+	width: 90px;
+	height: 90px;
+}
+.group-member-name{
+	padding-top: 20px;
+	text-align: center;
+	font-size: 20px;
+}
+.group-member li{
+	display: inline;
+    text-align: center;
+}
+.group-member ul{
+	margin: 2px auto;
+    line-height: 1.4;
+    padding-left: 0;
+}
+
+
+
+
+
+
+/* CSS Test begin */
+.comment-box {
+	margin-left: 5%;
+	width: 90%;
+    margin-top: 30px !important;
+
+}
+/* CSS Test end */
+
+.comment-box img {
+    width: 50px;
+    height: 50px;
+}
+.comment-box .media-left {
+    padding-right: 10px;
+    width: 65px;
+}
+.comment-box .media-info{
+	float:right;
+
+}
+
+
+.comment-box .media-body p {
+    border: 1px solid #ddd;
+    padding: 10px;
+	background-color: #ffff;
+}
+.comment-box .media-body .media p {
+    margin-bottom: 0;
+}
+.comment-box .media-heading {
+    background-color: #ffff;
+    border: 1px solid #ddd;
+    padding: 7px 10px;
+    position: relative;
+    margin-bottom: -1px;
+}
+.comment-box .media-heading:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10px;
+    left: -6px;
+}
+
+/*la row del carousel|gruppo*/
+.row-group{
+	margin-left: 25px;
+	margin-top: 80px;
+}
+@media (max-width: 978px) {
+	.row-group{
+		margin-left: -25px;
+	}
+
+}
+
+
+#join-group{
+
+	color: red;
+}
+
+
+
+.group-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.group-member-number{
+	font-height: 30px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.group-info-created{
+	font-height: 30px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
