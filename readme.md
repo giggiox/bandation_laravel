@@ -46,19 +46,19 @@ public function login(Request $request){
 	@csrf //PROTEZIONE CSRF GIA' INTEGRATA NATIVAMENTE
         @if($errors->has('generic'))
         	<div class="alert alert-danger" role="alert">
-                                    {{$errors->first('generic')}}
-                                </div>
-                            @endif
+                {{$errors->first('generic')}}
+            </div>
+        @endif
 
-                            <div class="form-label-group">
-                                <label for="inputEmail">Email</label>
-                                <input type="text" id="inputEmail" class="form-control {{ ($errors->has('email')) ? ' is-invalid':'' }}" name="email" placeholder="Email address" value="{{old('email')}}" required autofocus>
-                                <div class="invalid-feedback">
-                                    {{ $errors->has('email') ? $errors->first('email') : ''}}
-                                </div>
-                            </div>
-                            <br>
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+        <div class="form-label-group">
+            <label for="inputEmail">Email</label>
+            <input type="text" id="inputEmail" class="form-control {{ ($errors->has('email')) ? ' is-invalid':'' }}" name="email" placeholder="Email address" value="{{old('email')}}" required autofocus>
+            <div class="invalid-feedback">
+                {{ $errors->has('email') ? $errors->first('email') : ''}}
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
 </form>
 ```
 
@@ -74,17 +74,9 @@ class User extends Model{
 	public function instruments(){
         return $this->belongsToMany(\App\Instrument::class);
     }
-
-
-
 	protected $fillable = [
         'name', 'email', 'password','surname','place','lat','lng','born_date','verify_token','status'
     ];
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token'
     ];
