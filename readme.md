@@ -1,63 +1,92 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
+Laravel è un framework open source di tipo MVC scritto in PHP per lo sviluppo di applicazioni web, creato nel 2011 da Taylor Otwell come derivazione di Symfony.
 
-## About Laravel
+È distribuito con licenza MIT e mantiene tutto il codice disponibile su GitHub.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+per sviluppare il prgetto ho potuto usufruire di alcuni dei servizi che Laravel mette a disposizione agli sviluppatori:
+tra questi  
+## laravel routing
+laravel offre un semplice ed efficace metodo di gestione degli URL(route disptacher).
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+gestione routes per utente:
+```php
+Route::prefix('user')->group(function(){
+    Route::get('login',function(){
+        return view('user.login');
+    })->name('user/login');
+    Route::post('login','User\LoginController@login');
+});
+```
 
-## Learning Laravel
+## Laravel Controller
+```php
+public function login(Request $request){
+        $credentials=$request->only('email','password');
+        $validation=\Validator::make($credentials,$this->rules(),$this->messages());
+        if ($validation->fails()) {
+            return redirect()->route('user/login')->withErrors($validation)->withInput($request->only('email'));
+        }else{
+            $rememberme=false;
+            isset($request->rememberme) ? $rememberme=true : $rememberme=false;
+            if (\Auth::attempt(["email"=>$request->email,"password"=>$request->password,"status"=>1],$rememberme)){
+                return redirect()->route('/');
+            }else{
+                return redirect()->route('user/login')->withErrors(["generic"=>"nome utente o password non corretti"]);
+            }
+        }
+}
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+## Laravel View
+```php 
+<form class="form-signin" method="POST" action="{{route('user/login')}}">
+	@csrf //PROTEZIONE CSRF GIA' INTEGRATA NATIVAMENTE
+        @if($errors->has('generic'))
+        	<div class="alert alert-danger" role="alert">
+                                    {{$errors->first('generic')}}
+                                </div>
+                            @endif
 
-## Laravel Sponsors
+                            <div class="form-label-group">
+                                <label for="inputEmail">Email</label>
+                                <input type="text" id="inputEmail" class="form-control {{ ($errors->has('email')) ? ' is-invalid':'' }}" name="email" placeholder="Email address" value="{{old('email')}}" required autofocus>
+                                <div class="invalid-feedback">
+                                    {{ $errors->has('email') ? $errors->first('email') : ''}}
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+</form>
+```
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
+le view di laravel sono un mezzo molto potente perchè facilitano molto la codifica del progetto in quanto offrono nativamente molti servizi.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
+## Laravel model
+i modelli in laravel sono molto semplici da gestire perchè contengono solo gli attributi di una classe sia che la sua relazione con le altre.
+```php
+class User extends Model{
+	public function instruments(){
+        return $this->belongsToMany(\App\Instrument::class);
+    }
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+	protected $fillable = [
+        'name', 'email', 'password','surname','place','lat','lng','born_date','verify_token','status'
+    ];
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token'
+    ];
+}
+```
